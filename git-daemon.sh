@@ -33,4 +33,4 @@ if [ -n "${MAX_CONNECTIONS}" ]; then
     ARGS="${ARGS} --max-connections=${MAX_CONNECTIONS}"
 fi
 
-git daemon --export-all --base-path=/git --listen=0.0.0.0 --port=9418 ${ARGS}
+su -c 'git daemon --export-all --base-path=/git --listen=0.0.0.0 --port=9418 ${ARGS}' -s /bin/sh gerrit2

@@ -9,6 +9,9 @@ RUN apt-get update -qq
 RUN apt-get install -qqy git
 
 ADD git-daemon.sh /usr/bin/git-daemon.sh
+
+RUN useradd -r -g users gerrit2
+
 VOLUME /git
 
 # git daemon ports
